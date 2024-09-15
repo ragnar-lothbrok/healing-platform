@@ -1,5 +1,6 @@
 package com.bitspilani.thesis.service.impl;
 
+import com.bitspilani.thesis.events.DatabaseEvent;
 import com.bitspilani.thesis.events.SFTPEvent;
 import com.bitspilani.thesis.model.DBMonitoringEvent;
 import com.bitspilani.thesis.model.SFTPMonitoringEvent;
@@ -21,8 +22,17 @@ public class EventCollectionServiceImpl implements EventCollectionService {
     private SFTPMonitoringEventRepository sftpMonitoringEventRepository;
 
     @Override
-    public DBMonitoringEvent saveDBMonitoringEvent(DBMonitoringEvent dbMonitoringEvent) {
-        return null;
+    public DBMonitoringEvent saveDBMonitoringEvent(DatabaseEvent databaseEvent) {
+        return dbMonitoringEventRepository.save(DBMonitoringEvent.builder()
+                .spaceAllocated(databaseEvent.getSpaceAllocated())
+                .spaceUsed(databaseEvent.getSpaceUsed())
+                .eventTimestamp(databaseEvent.getEventTimestamp())
+                .instanceIdentifier(databaseEvent.getInstanceIdentifier())
+                .createdBy("SYSTEM")
+                .updatedBy("SYSTEM")
+                .createdAt(LocalDateTime.now())
+                .updatedAt(LocalDateTime.now())
+                .build());
     }
 
     @Override

@@ -1,13 +1,10 @@
 package com.bitspilani.thesis.utils;
 
 import com.bitspilani.thesis.events.SFTPEvent;
-import com.bitspilani.thesis.model.DBMonitoringEvent;
-import com.bitspilani.thesis.model.SFTPMonitoringEvent;
 
 import java.io.File;
 import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class DiskSpaceUtil {
 
