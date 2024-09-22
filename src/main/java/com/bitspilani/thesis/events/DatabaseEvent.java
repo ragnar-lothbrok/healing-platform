@@ -1,19 +1,19 @@
 package com.bitspilani.thesis.events;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
+@SuperBuilder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class DatabaseEvent {
-    private String instanceIdentifier;
-    private double spaceAllocated;  // in bytes
-    private double spaceUsed;  // in bytes
-    private LocalDateTime eventTimestamp;
+public class DatabaseEvent extends HealthEvent {
+    private String databaseEndPoint; // URL
+    private String datasourceName;    // RDS
+    private String providerName;      // Postgres
+    private String providerVersion;   // 14.10
+    private double spaceAllocated;     // in bytes
+    private double spaceUsed;          // in bytes
 }

@@ -1,6 +1,5 @@
 package com.bitspilani.thesis.repository;
 
-import com.bitspilani.thesis.model.AlertConfig;
 import com.bitspilani.thesis.model.Jobs;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

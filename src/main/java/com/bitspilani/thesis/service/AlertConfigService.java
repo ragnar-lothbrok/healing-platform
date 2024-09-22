@@ -1,12 +1,12 @@
 package com.bitspilani.thesis.service;
 
-import com.bitspilani.thesis.model.AlertConfig;
+import com.bitspilani.thesis.model.EventConfig;
 
 import java.util.List;
 
 public interface AlertConfigService {
 
-    List<AlertConfig> getAllAlertConfigs();
+    List<EventConfig> getAllAlertConfigs();
 
-    AlertConfig saveAlertConfig(AlertConfig alertConfig);
+    EventConfig saveAlertConfig(EventConfig eventConfig);
 }

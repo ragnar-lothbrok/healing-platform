@@ -41,7 +41,7 @@ public class ScheduledMetricCollectionEventTask {
             atomicInteger.addAndGet(document.getInteger(STORAGE_SIZE));
         });
         eventCollectionService.saveDBMonitoringEvent(DatabaseEvent.builder()
-                .instanceIdentifier(mongoClient.getClusterDescription().getClusterSettings().getHosts().toString())
+                .databaseEndPoint(mongoClient.getClusterDescription().getClusterSettings().getHosts().toString())
                 .spaceUsed(atomicInteger.get())
                         .eventTimestamp(LocalDateTime.now())
                 .build());

@@ -1,6 +1,6 @@
 package com.bitspilani.thesis.service.impl;
 
-import com.bitspilani.thesis.model.AlertConfig;
+import com.bitspilani.thesis.model.EventConfig;
 import com.bitspilani.thesis.repository.AlertConfigRepository;
 import com.bitspilani.thesis.service.AlertConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,12 @@ public class AlertConfigServiceImpl implements AlertConfigService {
     private AlertConfigRepository alertConfigRepository;
 
     @Override
-    public List<AlertConfig> getAllAlertConfigs() {
+    public List<EventConfig> getAllAlertConfigs() {
         return Streamable.of(alertConfigRepository.findAll()).toList();
     }
 
     @Override
-    public AlertConfig saveAlertConfig(AlertConfig alertConfig) {
-        return alertConfigRepository.save(alertConfig);
+    public EventConfig saveAlertConfig(EventConfig eventConfig) {
+        return alertConfigRepository.save(eventConfig);
     }
 }
