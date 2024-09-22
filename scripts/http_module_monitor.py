@@ -1,8 +1,9 @@
+import platform
 import requests
-from datetime import datetime
 import socket
 import sys
-import platform
+from datetime import datetime
+
 
 def check_api_status(url):
     try:
@@ -17,6 +18,8 @@ def send_event_data(api_url, collector_name, collector_version, event_type, even
         "collectorName": collector_name,
         "collectorVersion": collector_version,
         "eventType": event_type,
+        "targetServiceEndPoint": api_url,
+        "targetServiceName": "Self Healing Service",
         "eventTimestamp": event_timestamp.isoformat(),  # Convert to ISO format for JSON
         "hostIdentifier": socket.getfqdn(),
         "operatingSystem": {
@@ -32,8 +35,6 @@ def send_event_data(api_url, collector_name, collector_version, event_type, even
         "statusCode": status_code,
         "statusMessage": status_message
     }
-
-    print(data)
     try:
         response = requests.post(api_url, json=data)
         if response.status_code == 200:
@@ -46,7 +47,7 @@ def send_event_data(api_url, collector_name, collector_version, event_type, even
 if __name__ == "__main__":
     # Configuration
     endpoint_url = "http://localhost:8081/actuator/health"  # The API to check
-    post_api_url = "https://api.example.com/events"   # The API to send event data
+    post_api_url = "http://localhost:8081/api/events/http"   # The API to send event data
     collector_name = "MonitoringAgent1"
     collector_version = "1.0.0"
     event_type = "HTTP_HEALTH"

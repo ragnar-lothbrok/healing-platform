@@ -1,4 +1,4 @@
-package com.bitspilani.thesis.events;
+package com.bitspilani.thesis.dto.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SFTPEvent extends HealthEvent {
+public class SFTPStorageEventDto extends HealthEventDto {
     private String hostIdentifier;      // EC2 instance ID
     private double diskSpaceAllocated;   // in bytes
     private double diskSpaceUsed;        // in bytes

@@ -1,4 +1,4 @@
-package com.bitspilani.thesis.events;
+package com.bitspilani.thesis.dto.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class DatabaseEvent extends HealthEvent {
+public class DatabaseStorageEventDtoDto extends HealthEventDto {
     private String databaseEndPoint; // URL
     private String datasourceName;    // RDS
     private String providerName;      // Postgres

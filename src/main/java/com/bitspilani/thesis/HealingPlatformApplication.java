@@ -1,5 +1,6 @@
 package com.bitspilani.thesis;
 
+import com.bitspilani.thesis.repository.EventConfigRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -10,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableMongoRepositories
 @SpringBootApplication
 @EnableScheduling
-@EnableJpaRepositories(basePackageClasses = com.bitspilani.thesis.repository.AlertConfigRepository.class)
+@EnableJpaRepositories(basePackageClasses = EventConfigRepository.class)
 @EntityScan("com.bitspilani.thesis.model")
 public class HealingPlatformApplication {
 

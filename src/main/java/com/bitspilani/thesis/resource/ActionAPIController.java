@@ -4,11 +4,10 @@ import com.bitspilani.thesis.dto.JobSubmitRequestDTO;
 import com.bitspilani.thesis.dto.JobSubmitResponseDTO;
 import com.bitspilani.thesis.service.JobService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@Tag(name="Jobs API", description = "The Jobs API can be used to submit and get job")
+//@Tag(name="Jobs API", description = "The Jobs API can be used to submit and get job")
 @RestController
 @RequestMapping("/jobs")
 public class ActionAPIController {

@@ -1,20 +1,18 @@
-package com.bitspilani.thesis.events;
+package com.bitspilani.thesis.dto.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Map;
-
 @Data
 @SuperBuilder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class HTTPHealthEvent extends HealthEvent {
+public class HTTPHealthEventDto extends HealthEventDto {
     private String hostIdentifier;     // EC2 instance ID
-    private Map<String,String> operatingSystem;     // Linux
-    private String agentName;           // Agent name
+    private String targetServiceEndPoint;           // URL
+    private String targetServiceName;               // Service name
     private Integer statusCode;         // 200
     private String statusMessage;       // OK
 }
