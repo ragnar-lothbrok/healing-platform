@@ -1,8 +1,9 @@
-import os
-import socket
-import requests
 import json
+import os
+import requests
+import socket
 from datetime import datetime
+
 
 def get_folder_size(path):
     """Returns the size of the folder in bytes."""
