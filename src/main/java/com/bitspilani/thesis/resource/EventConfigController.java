@@ -14,7 +14,7 @@ import java.util.List;
 //@Tag(name="Alert Config API", description="The Alert Config API can be used to get and save alert configurations")
 @RestController
 @RequestMapping("/api/eventconfig")
-public class AlertConfigController {
+public class EventConfigController {
 
     @Autowired
     private EventConfigService eventConfigService;

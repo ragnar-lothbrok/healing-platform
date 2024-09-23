@@ -48,7 +48,7 @@ if __name__ == "__main__":
     # Configuration
     endpoint_url = "http://localhost:8081/actuator/health"  # The API to check
     post_api_url = "http://localhost:8081/api/events/http"   # The API to send event data
-    collector_name = "MonitoringAgent1"
+    collector_name = "MonitoringAgent"
     collector_version = "1.0.0"
     event_type = "HTTP_HEALTH"
     event_timestamp = datetime.now()

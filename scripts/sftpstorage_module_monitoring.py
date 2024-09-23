@@ -24,11 +24,22 @@ def get_disk_info(path):
 def send_data_to_api(api_url, payload):
     """Send the payload to the specified API URL."""
     headers = {'Content-Type': 'application/json'}
-    response = requests.post(api_url, data=json.dumps(payload), headers=headers)
-    return response.status_code, response.text
+    try:
+        print(f"Sending event data {payload}")
+        response = requests.post(api_url, data=json.dumps(payload), headers=headers)
+        # Output the result
+        print(f"API Response: Status code {status_code}, Response text: {response_text}")
+        if response.status_code == 200:
+            print("Event data sent successfully.")
+        else:
+            print(f"Failed to send event data. Status code: {response.status_code}, Response: {response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending event data: {e}")
+
+
 
 # Configuration
-disk_path = '/dev'  # Change to your folder path
+disk_path = '/tmp'  # Change to your folder path
 collector_name = 'MonitoringAgent'
 collector_version = '1.0'
 event_type = 'DISK_USAGE'
@@ -56,7 +67,4 @@ payload = {
 }
 
 # Sending data to the API
-status_code, response_text = send_data_to_api(api_url, payload)
-
-# Output the result
-print(f"API Response: Status code {status_code}, Response text: {response_text}")
+send_data_to_api(api_url, payload)

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 //@Tag(name="Jobs API", description = "The Jobs API can be used to submit and get job")
 @RestController
-@RequestMapping("/jobs")
+@RequestMapping("/api/jobs")
 public class ActionAPIController {
 
     @Autowired
